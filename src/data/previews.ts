@@ -52,3 +52,11 @@ export const tochettoPreview: PreviewClient = {
 export const previews: Record<string, PreviewClient> = {
   tochetto: tochettoPreview,
 };
+
+export function getPreviewBySlug(slug: string): PreviewClient | undefined {
+  return previews[slug];
+}
+
+export function getAllSlugs(): { slug: string; name: string }[] {
+  return Object.values(previews).map((p) => ({ slug: p.slug, name: p.name }));
+}
