@@ -426,17 +426,17 @@ function StudioPreviewShellTochettoRefinado() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="relative mx-auto max-w-5xl overflow-hidden rounded-[34px] border border-[#ef001e]/30 bg-gradient-to-br from-[#ef001e]/15 via-[#ef001e]/8 to-transparent p-6 text-center shadow-[0_24px_70px_rgba(0,0,0,0.30)] sm:p-10"
+          className="relative mx-auto max-w-5xl overflow-hidden rounded-[34px] border border-studio-accent/25 bg-gradient-to-br from-studio-accent-soft via-studio-accent-soft/40 to-transparent p-6 text-center shadow-[0_24px_70px_-30px_rgba(0,0,0,0.6)] sm:p-12"
         >
-          <div className="pointer-events-none absolute -top-24 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-[#ef001e]/20 blur-3xl" />
+          <div className="pointer-events-none absolute -top-24 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-studio-accent/20 blur-3xl" />
           <div className="relative">
-            <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.28em] text-[#ff8c99]">
+            <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.18em] text-studio-accent-hover">
               Próximo passo
             </p>
-            <h2 className="mb-3 text-2xl font-black tracking-tight text-white sm:text-4xl">
+            <h2 className="mb-4 text-3xl font-semibold tracking-tight text-studio-text sm:text-4xl">
               Gostou da direção?
             </h2>
-            <p className="mx-auto mb-7 max-w-2xl text-sm leading-relaxed text-slate-300 sm:text-base">
+            <p className="mx-auto mb-8 max-w-2xl text-base leading-relaxed text-studio-muted">
               Podemos transformar este preview em um site publicado, com domínio
               próprio, WhatsApp, ajustes finais e estrutura pronta para
               campanhas.
@@ -445,7 +445,7 @@ function StudioPreviewShellTochettoRefinado() {
               href={CLIENT.whatsapp}
               target="_blank"
               rel="noreferrer"
-              className="group inline-flex items-center gap-2 rounded-xl bg-[#ef001e] px-6 py-4 text-sm font-black text-white shadow-[0_18px_42px_rgba(239,0,30,0.30)] transition hover:-translate-y-0.5 hover:bg-[#ff1734] hover:shadow-[0_22px_55px_rgba(239,0,30,0.45)]"
+              className="group inline-flex items-center gap-2 rounded-xl bg-studio-accent px-6 py-3.5 text-sm font-semibold text-white shadow-[0_18px_42px_-14px_oklch(0.62_0.224_25_/_0.7)] transition hover:-translate-y-0.5 hover:bg-studio-accent-hover"
             >
               Quero conversar sobre este site
               <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -458,7 +458,7 @@ function StudioPreviewShellTochettoRefinado() {
         href={CLIENT.whatsapp}
         target="_blank"
         rel="noreferrer"
-        className="group fixed bottom-5 right-5 z-40 inline-flex items-center gap-2 rounded-2xl bg-[#ef001e] px-5 py-4 text-sm font-black text-white shadow-[0_18px_45px_rgba(239,0,30,0.38)] transition hover:-translate-y-0.5 hover:bg-[#ff1734] hover:shadow-[0_22px_55px_rgba(239,0,30,0.50)]"
+        className="group fixed bottom-5 right-5 z-40 inline-flex items-center gap-2 rounded-2xl bg-studio-accent px-5 py-3.5 text-sm font-semibold text-white shadow-[0_18px_45px_-14px_oklch(0.62_0.224_25_/_0.7)] transition hover:-translate-y-0.5 hover:bg-studio-accent-hover"
       >
         Quero conversar
         <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
