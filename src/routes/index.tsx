@@ -606,7 +606,8 @@ function StudioPreviewShellTochettoRefinado() {
             <p className="text-[11px] leading-relaxed text-studio-subtle">
               <span className="font-semibold text-studio-muted">
                 Aviso sobre prévias comerciais.
-              </span>{" "}
+              </span>
+              <br />
               As prévias apresentadas nesta plataforma são demonstrações
               comerciais. Marcas, nomes e informações podem ser usados apenas
               para contextualizar a proposta visual. A publicação final depende
