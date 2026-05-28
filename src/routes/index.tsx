@@ -2,11 +2,15 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import {
   ArrowUpRight,
+  ChevronDown,
   ExternalLink,
   Info,
   Menu,
+  MessageSquare,
   Monitor,
+  ShieldCheck,
   Smartphone,
+  Sparkles,
   X,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
