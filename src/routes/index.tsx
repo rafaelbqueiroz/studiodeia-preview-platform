@@ -332,6 +332,13 @@ function StudioPreviewShellTochettoRefinado() {
             </h1>
           </div>
           <div className="flex flex-wrap items-center gap-2">
+            <div className="inline-flex items-center gap-2 rounded-full border border-amber-400/20 bg-amber-400/10 px-3 py-1.5 text-[11px] font-medium text-amber-200">
+              <span className="relative inline-flex h-1.5 w-1.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-300 opacity-75" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-amber-300" />
+              </span>
+              Prévia · domínio final após aprovação
+            </div>
             <div
               role="tablist"
               aria-label="Modo de visualização"
@@ -377,13 +384,6 @@ function StudioPreviewShellTochettoRefinado() {
         </div>
 
         <div className="relative flex justify-center overflow-hidden rounded-[30px] border border-studio-border bg-studio-surface p-2 shadow-2xl shadow-black/30">
-          <div className="absolute left-4 top-4 z-10 inline-flex items-center gap-2 rounded-full border border-amber-400/25 bg-amber-400/10 px-3 py-1 text-[11px] font-medium text-amber-200 shadow-xl backdrop-blur-md">
-            <span className="relative inline-flex h-1.5 w-1.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-300 opacity-75" />
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-amber-300" />
-            </span>
-            Prévia · ainda não é o domínio final
-          </div>
 
           <AnimatePresence>
             {!iframeLoaded && (
