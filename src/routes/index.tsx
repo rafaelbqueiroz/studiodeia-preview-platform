@@ -543,10 +543,7 @@ function StudioPreviewShellTochettoRefinado() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             <div>
               <div className="mb-3 flex items-center gap-2">
-                <Sparkles className="h-4 w-4 text-studio-accent" />
-                <p className="text-sm font-semibold text-studio-text">
-                  Studio de IA
-                </p>
+                <StudioLogo />
               </div>
               <p className="text-xs leading-relaxed text-studio-muted">
                 Estratégia, IA e presença digital para negócios locais.
