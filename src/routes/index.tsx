@@ -454,6 +454,30 @@ function StudioPreviewShellTochettoRefinado() {
         </motion.div>
       </section>
 
+      <footer className="border-t border-studio-border bg-studio-surface px-4 py-10 sm:px-7 lg:px-8">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 sm:flex-row">
+          <div className="text-center sm:text-left">
+            <p className="mb-1 text-sm font-semibold text-studio-text">
+              Studio de IA
+            </p>
+            <p className="text-xs leading-relaxed text-studio-muted">
+              STUDIO DE IA CONSULTORIA DE TECNOLOGIA DA INFORMACAO LTDA
+            </p>
+            <p className="text-xs leading-relaxed text-studio-muted">
+              CNPJ 60.398.053/0001-34
+            </p>
+          </div>
+          <div className="text-center sm:text-right">
+            <p className="text-xs leading-relaxed text-studio-muted">
+              Avenida Carlos Gomes, 700 — Sala 606, 5º Andar
+            </p>
+            <p className="text-xs leading-relaxed text-studio-muted">
+              Boa Vista, Porto Alegre — RS, 90480-000
+            </p>
+          </div>
+        </div>
+      </footer>
+
       <a
         href={CLIENT.whatsapp}
         target="_blank"
