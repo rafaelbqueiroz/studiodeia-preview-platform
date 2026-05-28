@@ -322,12 +322,12 @@ function StudioPreviewShellTochettoRefinado() {
       </AnimatePresence>
 
       <section className="px-3 py-4 sm:px-7 lg:px-8">
-        <div className="mb-4 flex flex-col gap-3 rounded-3xl border border-white/10 bg-white/[0.035] p-3 sm:flex-row sm:items-center sm:justify-between sm:p-4">
+        <div className="mb-4 flex flex-col gap-3 rounded-3xl border border-studio-border bg-white/[0.025] p-3 sm:flex-row sm:items-center sm:justify-between sm:p-4">
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-500">
+            <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-studio-subtle">
               Visualização do site proposto
             </p>
-            <h1 className="text-lg font-black tracking-tight text-white sm:text-xl">
+            <h1 className="text-lg font-semibold tracking-tight text-studio-text sm:text-xl">
               {CLIENT.name} · experiência do cliente final
             </h1>
           </div>
@@ -335,7 +335,7 @@ function StudioPreviewShellTochettoRefinado() {
             <div
               role="tablist"
               aria-label="Modo de visualização"
-              className="inline-flex items-center gap-1 rounded-xl border border-white/10 bg-white/[0.03] p-1"
+              className="inline-flex items-center gap-1 rounded-xl border border-studio-border bg-white/[0.02] p-1"
             >
               <button
                 role="tab"
@@ -343,8 +343,8 @@ function StudioPreviewShellTochettoRefinado() {
                 onClick={() => setMobileMode(false)}
                 className={
                   !mobileMode
-                    ? "inline-flex items-center gap-2 rounded-lg bg-white px-3 py-2 text-sm font-black text-[#171d24] shadow-sm"
-                    : "inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white/[0.05] hover:text-white"
+                    ? "inline-flex items-center gap-2 rounded-lg bg-studio-text px-3 py-2 text-sm font-semibold text-studio-bg shadow-sm"
+                    : "inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-studio-muted transition hover:bg-white/[0.05] hover:text-studio-text"
                 }
               >
                 <Monitor className="h-4 w-4" />
@@ -356,8 +356,8 @@ function StudioPreviewShellTochettoRefinado() {
                 onClick={() => setMobileMode(true)}
                 className={
                   mobileMode
-                    ? "inline-flex items-center gap-2 rounded-lg bg-white px-3 py-2 text-sm font-black text-[#171d24] shadow-sm"
-                    : "inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white/[0.05] hover:text-white"
+                    ? "inline-flex items-center gap-2 rounded-lg bg-studio-text px-3 py-2 text-sm font-semibold text-studio-bg shadow-sm"
+                    : "inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-studio-muted transition hover:bg-white/[0.05] hover:text-studio-text"
                 }
               >
                 <Smartphone className="h-4 w-4" />
@@ -368,7 +368,7 @@ function StudioPreviewShellTochettoRefinado() {
               href={CLIENT.previewUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl border border-white/10 px-3 py-2 text-sm font-semibold text-slate-300 transition hover:border-white/25 hover:bg-white/[0.05] hover:text-white"
+              className="inline-flex items-center gap-2 rounded-xl border border-studio-border px-3 py-2 text-sm font-medium text-studio-muted transition hover:border-white/20 hover:bg-white/[0.05] hover:text-studio-text"
             >
               Nova aba
               <ExternalLink className="h-4 w-4" />
@@ -376,8 +376,8 @@ function StudioPreviewShellTochettoRefinado() {
           </div>
         </div>
 
-        <div className="relative flex justify-center overflow-hidden rounded-[30px] border border-white/10 bg-[#0f141a] p-2 shadow-2xl shadow-black/35">
-          <div className="absolute left-4 top-4 z-10 inline-flex items-center gap-2 rounded-full border border-amber-400/25 bg-amber-400/12 px-3 py-1 text-xs font-bold text-amber-200 shadow-xl backdrop-blur-md">
+        <div className="relative flex justify-center overflow-hidden rounded-[30px] border border-studio-border bg-studio-surface p-2 shadow-2xl shadow-black/30">
+          <div className="absolute left-4 top-4 z-10 inline-flex items-center gap-2 rounded-full border border-amber-400/25 bg-amber-400/10 px-3 py-1 text-[11px] font-medium text-amber-200 shadow-xl backdrop-blur-md">
             <span className="relative inline-flex h-1.5 w-1.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-300 opacity-75" />
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-amber-300" />
@@ -391,11 +391,11 @@ function StudioPreviewShellTochettoRefinado() {
                 initial={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
-                className="absolute inset-0 z-[5] flex items-center justify-center bg-[#0f141a]"
+                className="absolute inset-0 z-[5] flex items-center justify-center bg-studio-surface"
               >
                 <div className="flex flex-col items-center gap-4 text-center">
-                  <div className="h-10 w-10 animate-spin rounded-full border-2 border-white/15 border-t-[#ef001e]" />
-                  <p className="text-sm font-semibold text-slate-300">
+                  <div className="h-10 w-10 animate-spin rounded-full border-2 border-white/15 border-t-studio-accent" />
+                  <p className="text-sm font-medium text-studio-muted">
                     Carregando prévia da {CLIENT.name}...
                   </p>
                 </div>
