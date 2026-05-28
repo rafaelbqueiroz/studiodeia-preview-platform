@@ -80,6 +80,19 @@
 
 :root {
   --radius: 0.625rem;
+
+  /* Studio de IA — refined dark palette */
+  --studio-bg: oklch(0.21 0.012 250);
+  --studio-surface: oklch(0.245 0.014 250);
+  --studio-surface-2: oklch(0.28 0.014 250);
+  --studio-border: oklch(1 0 0 / 8%);
+  --studio-text: oklch(0.985 0.002 250);
+  --studio-muted: oklch(0.78 0.012 250);
+  --studio-subtle: oklch(0.62 0.014 250);
+  --studio-accent: oklch(0.62 0.224 25);
+  --studio-accent-hover: oklch(0.68 0.224 25);
+  --studio-accent-soft: oklch(0.62 0.224 25 / 12%);
+
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
   --card: oklch(1 0 0);
