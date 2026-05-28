@@ -176,7 +176,7 @@ function StudioPreviewShellTochettoRefinado() {
     if (mobileMode) {
       return "h-[760px] w-[390px] max-w-full rounded-[34px] border-[10px] border-black bg-white shadow-2xl shadow-black/40";
     }
-    return "h-[calc(100vh-230px)] min-h-[640px] w-full rounded-[22px] bg-white";
+    return "h-[calc(100vh-230px)] min-h-[640px] w-full rounded-lg bg-white";
   }, [mobileMode]);
 
   return (
@@ -383,7 +383,7 @@ function StudioPreviewShellTochettoRefinado() {
           </div>
         </div>
 
-        <div className="relative flex justify-center overflow-hidden rounded-[30px] border border-studio-border bg-studio-surface p-2 shadow-2xl shadow-black/30">
+        <div className="relative flex justify-center overflow-hidden rounded-xl border border-studio-border bg-studio-surface p-2 shadow-2xl shadow-black/30">
 
           <AnimatePresence>
             {!iframeLoaded && (

@@ -186,4 +186,20 @@
     font-family: var(--font-display);
     letter-spacing: -0.02em;
   }
+
+  /* Discreet custom scrollbar — dark theme */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: oklch(0.35 0.01 250);
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.45 0.01 250);
+  }
 }
