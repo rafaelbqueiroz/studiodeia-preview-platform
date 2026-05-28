@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Studio de IA | Prévia estratégica do seu site" },
+      { name: "description", content: "Veja uma prévia personalizada de site criada pelo Studio de IA para gerar confiança, valor percebido e mais contatos para sua empresa." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Studio de IA | Prévia estratégica do seu site" },
+      { property: "og:description", content: "Veja uma prévia personalizada de site criada pelo Studio de IA para gerar confiança, valor percebido e mais contatos para sua empresa." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Studio de IA | Prévia estratégica do seu site" },
+      { name: "twitter:description", content: "Veja uma prévia personalizada de site criada pelo Studio de IA para gerar confiança, valor percebido e mais contatos para sua empresa." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/BZuXQUAzuiNAfNyfKxyQ4GxAsfl2/social-images/social-1779930442727-ChatGPT_Image_27_de_mai._de_2026,_22_07_09.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/BZuXQUAzuiNAfNyfKxyQ4GxAsfl2/social-images/social-1779930442727-ChatGPT_Image_27_de_mai._de_2026,_22_07_09.webp" },
     ],
     links: [
       {
