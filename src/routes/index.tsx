@@ -270,13 +270,13 @@ function StudioPreviewShellTochettoRefinado() {
               exit={{ x: "100%" }}
               transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
               onClick={(event) => event.stopPropagation()}
-              className="ml-auto flex h-full w-[84vw] max-w-sm flex-col border-l border-white/10 bg-[#171d24] p-5 shadow-2xl"
+              className="ml-auto flex h-full w-[84vw] max-w-sm flex-col border-l border-studio-border bg-studio-bg p-5 shadow-2xl"
             >
               <div className="mb-8 flex items-center justify-between">
                 <StudioLogo />
                 <button
                   onClick={() => setMenuOpen(false)}
-                  className="rounded-xl border border-white/10 p-2 text-slate-300 transition hover:bg-white/5 hover:text-white"
+                  className="rounded-xl border border-studio-border p-2 text-studio-muted transition hover:bg-white/5 hover:text-studio-text"
                   aria-label="Fechar menu"
                 >
                   <X className="h-5 w-5" />
@@ -287,7 +287,7 @@ function StudioPreviewShellTochettoRefinado() {
                   setDiagnosticOpen(true);
                   setMenuOpen(false);
                 }}
-                className="mb-3 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4 text-left text-sm font-bold text-white transition hover:border-white/20 hover:bg-white/[0.06]"
+                className="mb-3 rounded-2xl border border-studio-border bg-white/[0.02] px-4 py-4 text-left text-sm font-semibold text-studio-text transition hover:border-white/15 hover:bg-white/[0.05]"
               >
                 Entender o que foi feito
               </button>
@@ -296,7 +296,7 @@ function StudioPreviewShellTochettoRefinado() {
                   setMobileMode((value) => !value);
                   setMenuOpen(false);
                 }}
-                className="mb-3 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4 text-left text-sm font-bold text-white transition hover:border-white/20 hover:bg-white/[0.06]"
+                className="mb-3 rounded-2xl border border-studio-border bg-white/[0.02] px-4 py-4 text-left text-sm font-semibold text-studio-text transition hover:border-white/15 hover:bg-white/[0.05]"
               >
                 Alternar desktop/mobile
               </button>
@@ -304,7 +304,7 @@ function StudioPreviewShellTochettoRefinado() {
                 href={CLIENT.previewUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="mb-3 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4 text-sm font-bold text-white transition hover:border-white/20 hover:bg-white/[0.06]"
+                className="mb-3 rounded-2xl border border-studio-border bg-white/[0.02] px-4 py-4 text-sm font-semibold text-studio-text transition hover:border-white/15 hover:bg-white/[0.05]"
               >
                 Abrir site em nova aba
               </a>
@@ -312,7 +312,7 @@ function StudioPreviewShellTochettoRefinado() {
                 href={CLIENT.whatsapp}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-auto rounded-2xl bg-[#ef001e] px-4 py-4 text-center text-sm font-black text-white shadow-[0_18px_42px_rgba(239,0,30,0.30)] transition hover:bg-[#ff1734]"
+                className="mt-auto rounded-2xl bg-studio-accent px-4 py-4 text-center text-sm font-semibold text-white transition hover:bg-studio-accent-hover"
               >
                 Quero conversar
               </a>
