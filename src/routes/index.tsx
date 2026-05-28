@@ -157,7 +157,21 @@ function DiagnosticPanel({
 
 function StudioPreviewShellTochettoRefinado() {
   const [diagnosticOpen, setDiagnosticOpen] = useState(false);
-  const [mobileMode, setMobileMode] = useState(false);
+  const [mobileMode, setMobileMode] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return window.matchMedia("(max-width: 768px)").matches;
+  });
+  const [userToggled, setUserToggled] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mql = window.matchMedia("(max-width: 768px)");
+    const onChange = (e: MediaQueryListEvent) => {
+      if (!userToggled) setMobileMode(e.matches);
+    };
+    mql.addEventListener("change", onChange);
+    return () => mql.removeEventListener("change", onChange);
+  }, [userToggled]);
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [iframeLoaded, setIframeLoaded] = useState(false);
@@ -178,9 +192,9 @@ function StudioPreviewShellTochettoRefinado() {
 
   const iframeClass = useMemo(() => {
     if (mobileMode) {
-      return "h-[760px] w-[390px] max-w-full rounded-[34px] border-[10px] border-black bg-white shadow-2xl shadow-black/40";
+      return "h-[70vh] min-h-[560px] max-h-[760px] w-full max-w-[390px] rounded-[34px] border-[8px] sm:border-[10px] border-black bg-white shadow-2xl shadow-black/40";
     }
-    return "h-[calc(100vh-230px)] min-h-[640px] w-full rounded-lg bg-white";
+    return "h-[calc(100vh-230px)] min-h-[520px] w-full rounded-lg bg-white";
   }, [mobileMode]);
 
   return (
@@ -351,7 +365,7 @@ function StudioPreviewShellTochettoRefinado() {
               <button
                 role="tab"
                 aria-selected={!mobileMode}
-                onClick={() => setMobileMode(false)}
+                onClick={() => { setUserToggled(true); setMobileMode(false); }}
                 className={
                   !mobileMode
                     ? "inline-flex items-center gap-2 rounded-lg bg-studio-text px-3 py-2 text-sm font-semibold text-studio-bg shadow-sm"
@@ -364,7 +378,7 @@ function StudioPreviewShellTochettoRefinado() {
               <button
                 role="tab"
                 aria-selected={mobileMode}
-                onClick={() => setMobileMode(true)}
+                onClick={() => { setUserToggled(true); setMobileMode(true); }}
                 className={
                   mobileMode
                     ? "inline-flex items-center gap-2 rounded-lg bg-studio-text px-3 py-2 text-sm font-semibold text-studio-bg shadow-sm"
