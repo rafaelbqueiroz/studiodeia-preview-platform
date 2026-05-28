@@ -547,6 +547,7 @@ function StudioPreviewShellTochettoRefinado() {
               </div>
               <p className="text-xs leading-relaxed text-studio-muted">
                 Estratégia, IA e presença digital para negócios locais.
+                <br />
                 Apresentação conduzida por{" "}
                 <span className="font-semibold text-studio-text">
                   Rafa Queiroz
