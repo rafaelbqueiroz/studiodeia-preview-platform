@@ -2,11 +2,15 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import {
   ArrowUpRight,
+  ChevronDown,
   ExternalLink,
   Info,
   Menu,
+  MessageSquare,
   Monitor,
+  ShieldCheck,
   Smartphone,
+  Sparkles,
   X,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -420,7 +424,70 @@ function StudioPreviewShellTochettoRefinado() {
         </div>
       </section>
 
-      <section className="px-4 pb-28 pt-3 sm:px-7 lg:px-8">
+      <section className="px-4 pt-10 sm:px-7 lg:px-8">
+        <div className="mx-auto max-w-5xl">
+          <p className="mb-2 text-[11px] font-medium uppercase tracking-[0.18em] text-studio-accent">
+            Como funciona
+          </p>
+          <h2 className="mb-8 text-2xl font-semibold tracking-tight text-studio-text sm:text-3xl">
+            Do preview à publicação, em 3 passos
+          </h2>
+          <div className="grid gap-3 sm:grid-cols-3">
+            {[
+              {
+                n: "01",
+                title: "Você analisa a prévia",
+                body: "Veja a proposta de site criada para a sua empresa, sem compromisso.",
+              },
+              {
+                n: "02",
+                title: "Ajustamos juntos",
+                body: "Trocamos textos, imagens, WhatsApp, produtos e seções conforme sua necessidade.",
+              },
+              {
+                n: "03",
+                title: "Publicamos no seu domínio",
+                body: "Após aprovação, o site vai para o domínio oficial da empresa, pronto para campanhas.",
+              },
+            ].map((s) => (
+              <div
+                key={s.n}
+                className="rounded-3xl border border-studio-border bg-white/[0.02] p-5"
+              >
+                <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.18em] text-studio-accent">
+                  Passo {s.n}
+                </p>
+                <h3 className="mb-2 text-base font-semibold text-studio-text">
+                  {s.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-studio-muted">
+                  {s.body}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-6 flex flex-wrap items-center gap-2">
+            {[
+              "Prévia privada",
+              "Ajustes antes da publicação",
+              "Domínio final após aprovação",
+            ].map((chip) => (
+              <span
+                key={chip}
+                className="inline-flex items-center gap-2 rounded-full border border-studio-border bg-white/[0.025] px-3 py-1.5 text-[11px] font-medium text-studio-muted"
+              >
+                <ShieldCheck className="h-3.5 w-3.5 text-studio-accent" />
+                {chip}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <FaqSection />
+
+      <section className="px-4 pb-28 pt-10 sm:px-7 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -441,39 +508,130 @@ function StudioPreviewShellTochettoRefinado() {
               próprio, WhatsApp, ajustes finais e estrutura pronta para
               campanhas.
             </p>
-            <a
-              href={CLIENT.whatsapp}
-              target="_blank"
-              rel="noreferrer"
-              className="group inline-flex items-center gap-2 rounded-xl bg-studio-accent px-6 py-3.5 text-sm font-semibold text-white shadow-[0_18px_42px_-14px_oklch(0.62_0.224_25_/_0.7)] transition hover:-translate-y-0.5 hover:bg-studio-accent-hover"
-            >
-              Quero conversar sobre este site
-              <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
+            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <a
+                href={CLIENT.whatsapp}
+                target="_blank"
+                rel="noreferrer"
+                className="group inline-flex items-center gap-2 rounded-xl bg-studio-accent px-6 py-3.5 text-sm font-semibold text-white shadow-[0_18px_42px_-14px_oklch(0.62_0.224_25_/_0.7)] transition hover:-translate-y-0.5 hover:bg-studio-accent-hover"
+              >
+                Quero conversar sobre este site
+                <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+              <a
+                href={CLIENT.whatsapp}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-xl border border-studio-border bg-white/[0.03] px-6 py-3.5 text-sm font-semibold text-studio-text transition hover:border-white/20 hover:bg-white/[0.06]"
+              >
+                <MessageSquare className="h-4 w-4 text-studio-accent" />
+                Solicitar ajustes na prévia
+              </a>
+            </div>
+            <p className="mx-auto mt-6 max-w-2xl text-xs leading-relaxed text-studio-subtle">
+              Esta é uma prévia comercial criada pelo Studio de IA para
+              demonstrar uma proposta de presença digital para a {CLIENT.name}.
+              O site final só é publicado após aprovação, ajustes e
+              configuração do domínio oficial.
+            </p>
           </div>
         </motion.div>
       </section>
 
-      <footer className="border-t border-studio-border bg-studio-surface px-4 py-10 sm:px-7 lg:px-8">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 sm:flex-row">
-          <div className="text-center sm:text-left">
-            <p className="mb-1 text-sm font-semibold text-studio-text">
-              Studio de IA
-            </p>
-            <p className="text-xs leading-relaxed text-studio-muted">
-              STUDIO DE IA CONSULTORIA DE TECNOLOGIA DA INFORMACAO LTDA
-            </p>
-            <p className="text-xs leading-relaxed text-studio-muted">
-              CNPJ 60.398.053/0001-34
+      <footer className="border-t border-studio-border bg-studio-surface px-4 py-12 sm:px-7 lg:px-8">
+        <div className="mx-auto flex max-w-6xl flex-col gap-10">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div>
+              <div className="mb-3 flex items-center gap-2">
+                <Sparkles className="h-4 w-4 text-studio-accent" />
+                <p className="text-sm font-semibold text-studio-text">
+                  Studio de IA
+                </p>
+              </div>
+              <p className="text-xs leading-relaxed text-studio-muted">
+                Estratégia, IA e presença digital para negócios locais.
+                Apresentação conduzida por{" "}
+                <span className="font-semibold text-studio-text">
+                  Rafa Queiroz
+                </span>
+                .
+              </p>
+            </div>
+
+            <div>
+              <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.18em] text-studio-subtle">
+                Dados institucionais
+              </p>
+              <p className="text-xs leading-relaxed text-studio-muted">
+                Studio de IA Consultoria de Tecnologia da Informação Ltda
+              </p>
+              <p className="text-xs leading-relaxed text-studio-muted">
+                CNPJ 60.398.053/0001-34
+              </p>
+              <p className="mt-2 text-xs leading-relaxed text-studio-muted">
+                Av. Carlos Gomes, 700 — Sala 606, 5º Andar
+                <br />
+                Boa Vista, Porto Alegre — RS, 90480-000
+              </p>
+            </div>
+
+            <div>
+              <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.18em] text-studio-subtle">
+                Contato
+              </p>
+              <a
+                href={CLIENT.whatsapp}
+                target="_blank"
+                rel="noreferrer"
+                className="block text-xs leading-relaxed text-studio-muted transition hover:text-studio-text"
+              >
+                WhatsApp comercial
+              </a>
+              <a
+                href="mailto:contato@studiodeia.com.br"
+                className="block text-xs leading-relaxed text-studio-muted transition hover:text-studio-text"
+              >
+                contato@studiodeia.com.br
+              </a>
+              <a
+                href="https://studiodeia.com.br"
+                target="_blank"
+                rel="noreferrer"
+                className="block text-xs leading-relaxed text-studio-muted transition hover:text-studio-text"
+              >
+                studiodeia.com.br
+              </a>
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-studio-border bg-white/[0.02] p-4">
+            <p className="text-[11px] leading-relaxed text-studio-subtle">
+              <span className="font-semibold text-studio-muted">
+                Aviso sobre prévias comerciais.
+              </span>{" "}
+              As prévias apresentadas nesta plataforma são demonstrações
+              comerciais. Marcas, nomes e informações podem ser usados apenas
+              para contextualizar a proposta visual. A publicação final depende
+              de aprovação da empresa.
             </p>
           </div>
-          <div className="text-center sm:text-right">
-            <p className="text-xs leading-relaxed text-studio-muted">
-              Avenida Carlos Gomes, 700 — Sala 606, 5º Andar
+
+          <div className="flex flex-col items-center justify-between gap-3 border-t border-studio-border pt-6 sm:flex-row">
+            <p className="text-[11px] text-studio-subtle">
+              © {new Date().getFullYear()} Studio de IA. Todos os direitos
+              reservados.
             </p>
-            <p className="text-xs leading-relaxed text-studio-muted">
-              Boa Vista, Porto Alegre — RS, 90480-000
-            </p>
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[11px] text-studio-muted">
+              <a href="#" className="transition hover:text-studio-text">
+                Política de Privacidade
+              </a>
+              <a href="#" className="transition hover:text-studio-text">
+                Termos de Uso
+              </a>
+              <a href="#" className="transition hover:text-studio-text">
+                Aviso sobre prévias
+              </a>
+            </div>
           </div>
         </div>
       </footer>
@@ -488,5 +646,88 @@ function StudioPreviewShellTochettoRefinado() {
         <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
       </a>
     </main>
+  );
+}
+
+function FaqSection() {
+  const items = [
+    {
+      q: "Este site já está publicado oficialmente?",
+      a: "Não. Esta é uma prévia visual criada para você avaliar a proposta. A publicação final só acontece após aprovação.",
+    },
+    {
+      q: "Posso pedir alterações?",
+      a: "Sim. Textos, imagens, WhatsApp, produtos e seções podem ser ajustados antes da publicação.",
+    },
+    {
+      q: "Preciso contratar para ver a prévia?",
+      a: "Não. Esta demonstração foi criada para você avaliar a proposta sem nenhum compromisso.",
+    },
+    {
+      q: "O site pode ir para o meu domínio?",
+      a: "Sim. Após aprovação, configuramos o domínio oficial da empresa e cuidamos da publicação.",
+    },
+    {
+      q: "Quem criou esta prévia?",
+      a: "O Studio de IA, operação especializada em presença digital, IA e automação para negócios locais, conduzida por Rafa Queiroz.",
+    },
+  ];
+  const [open, setOpen] = useState<number | null>(0);
+
+  return (
+    <section className="px-4 pt-12 sm:px-7 lg:px-8">
+      <div className="mx-auto max-w-3xl">
+        <p className="mb-2 text-[11px] font-medium uppercase tracking-[0.18em] text-studio-accent">
+          Perguntas frequentes
+        </p>
+        <h2 className="mb-8 text-2xl font-semibold tracking-tight text-studio-text sm:text-3xl">
+          Antes de qualquer decisão
+        </h2>
+        <div className="overflow-hidden rounded-3xl border border-studio-border bg-white/[0.02]">
+          {items.map((item, i) => {
+            const isOpen = open === i;
+            return (
+              <div
+                key={item.q}
+                className={
+                  i > 0 ? "border-t border-studio-border" : undefined
+                }
+              >
+                <button
+                  onClick={() => setOpen(isOpen ? null : i)}
+                  aria-expanded={isOpen}
+                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition hover:bg-white/[0.02]"
+                >
+                  <span className="text-sm font-semibold text-studio-text">
+                    {item.q}
+                  </span>
+                  <ChevronDown
+                    className={
+                      "h-4 w-4 shrink-0 text-studio-muted transition " +
+                      (isOpen ? "rotate-180 text-studio-accent" : "")
+                    }
+                  />
+                </button>
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <p className="px-5 pb-5 text-sm leading-relaxed text-studio-muted">
+                        {item.a}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
   );
 }
