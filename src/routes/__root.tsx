@@ -74,16 +74,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Studio de IA | Prévia estratégica do seu site" },
       { name: "description", content: "Veja uma prévia personalizada de site criada pelo Studio de IA para gerar confiança, valor percebido e mais contatos para sua empresa." },
-      { name: "author", content: "Lovable" },
+      { name: "author", content: "Studio de IA" },
       { property: "og:title", content: "Studio de IA | Prévia estratégica do seu site" },
       { property: "og:description", content: "Veja uma prévia personalizada de site criada pelo Studio de IA para gerar confiança, valor percebido e mais contatos para sua empresa." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Studio de IA | Prévia estratégica do seu site" },
-      { name: "twitter:description", content: "Veja uma prévia personalizada de site criada pelo Studio de IA para gerar confiança, valor percebido e mais contatos para sua empresa." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/BZuXQUAzuiNAfNyfKxyQ4GxAsfl2/social-images/social-1779930442727-ChatGPT_Image_27_de_mai._de_2026,_22_07_09.webp" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/BZuXQUAzuiNAfNyfKxyQ4GxAsfl2/social-images/social-1779930442727-ChatGPT_Image_27_de_mai._de_2026,_22_07_09.webp" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:site", content: "@studiodeia" },
     ],
     links: [
       {
@@ -100,7 +96,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <head>
         <HeadContent />
       </head>

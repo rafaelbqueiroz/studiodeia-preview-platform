@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import {
   ArrowUpRight,
-  ChevronDown,
   ExternalLink,
   Info,
   Menu,
@@ -10,150 +9,36 @@ import {
   Monitor,
   ShieldCheck,
   Smartphone,
-  Sparkles,
-  X,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { tochettoPreview, type PreviewClient } from "../data/previews";
+import { StudioLogo } from "../components/preview/StudioLogo";
+import { DiagnosticPanel } from "../components/preview/DiagnosticPanel";
+import { FaqSection } from "../components/preview/FaqSection";
+import { PreviewFooter } from "../components/preview/PreviewFooter";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Prévia do site · Tochetto" },
-      {
-        name: "description",
-        content:
-          "Prévia exclusiva do novo site da Tochetto criada pelo Studio de IA — posicionamento premium e pedidos qualificados.",
-      },
-      { property: "og:title", content: "Prévia do site · Tochetto" },
-      {
-        property: "og:description",
-        content:
-          "Prévia exclusiva do novo site da Tochetto criada pelo Studio de IA.",
-      },
-    ],
-  }),
+  head: () => {
+    const client = tochettoPreview;
+    return {
+      meta: [
+        { title: `Prévia do site · ${client.name}` },
+        {
+          name: "description",
+          content: `Prévia exclusiva do novo site da ${client.name} criada pelo Studio de IA — ${client.objective}.`,
+        },
+        { property: "og:title", content: `Prévia do site · ${client.name}` },
+        {
+          property: "og:description",
+          content: `Prévia exclusiva do novo site da ${client.name} criada pelo Studio de IA.`,
+        },
+      ],
+    };
+  },
   component: StudioPreviewShellTochettoRefinado,
 });
 
-const CLIENT = {
-  name: "Tochetto",
-  previewUrl: "https://tochetto.sigaseuprojeto.online/",
-  logoUrl: "https://studiodeia.com.br/images/logo.svg",
-  whatsapp:
-    "https://wa.me/5554993461322?text=Ol%C3%A1%2C%20vi%20a%20pr%C3%A9via%20do%20site%20da%20Tochetto%20e%20quero%20conversar%20sobre%20a%20publica%C3%A7%C3%A3o.",
-  objective:
-    "posicionamento premium, confiança técnica e pedidos qualificados de orçamento",
-};
-
-function StudioLogo() {
-  return (
-    <img
-      src={CLIENT.logoUrl}
-      alt="Studio de IA"
-      className="h-8 w-auto sm:h-9"
-      draggable={false}
-    />
-  );
-}
-
-function DiagnosticPanel({
-  open,
-  onClose,
-}: {
-  open: boolean;
-  onClose?: () => void;
-}) {
-  const cards = [
-    {
-      eyebrow: "01 · Diagnóstico",
-      title: "O que observamos",
-      body: "A Tochetto atua em um segmento em que o cliente precisa confiar antes de pedir orçamento. Lareiras, calefação e soluções arquitetônicas envolvem segurança, estética, investimento e escolha técnica.",
-    },
-    {
-      eyebrow: "02 · Criação",
-      title: "O que foi criado",
-      body: "Uma presença digital com visual premium, navegação clara, foco em produtos, tecnologia, arquitetos e contato, além de chamada direta para orçamento.",
-    },
-    {
-      eyebrow: "03 · Resultado",
-      title: "Como ajuda a vender",
-      body: "Ajuda a aumentar percepção de valor, reduzir dúvidas antes do primeiro contato, gerar pedidos mais qualificados e apoiar campanhas de Google, Instagram e indicações.",
-    },
-    {
-      eyebrow: "04 · Próximo passo",
-      title: "Publicar com ajustes",
-      body: "Podemos ajustar textos, imagens, WhatsApp, domínio e publicar a versão final com estrutura preparada para campanhas e SEO local.",
-      accent: true,
-    },
-  ];
-
-  return (
-    <AnimatePresence initial={false}>
-      {open && (
-        <motion.section
-          initial={{ height: 0, opacity: 0 }}
-          animate={{ height: "auto", opacity: 1 }}
-          exit={{ height: 0, opacity: 0 }}
-          transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="overflow-hidden border-t border-studio-border bg-studio-surface"
-        >
-          <div className="px-4 py-7 sm:px-6 lg:px-8">
-            <div className="mb-6 flex items-start justify-between gap-4">
-              <div>
-                <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-studio-accent">
-                  Análise estratégica
-                </p>
-                <h2 className="mt-2 text-xl font-semibold tracking-tight text-studio-text sm:text-2xl">
-                  O que pensamos para a {CLIENT.name}
-                </h2>
-              </div>
-              {onClose && (
-                <button
-                  onClick={onClose}
-                  className="rounded-xl border border-studio-border p-2 text-studio-muted transition hover:bg-white/5 hover:text-studio-text md:hidden"
-                  aria-label="Fechar diagnóstico"
-                >
-                  <X className="h-5 w-5" />
-                </button>
-              )}
-            </div>
-            <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-              {cards.map((card, i) => (
-                <motion.article
-                  key={card.eyebrow}
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.35, delay: 0.05 + i * 0.05 }}
-                  className={
-                    card.accent
-                      ? "group rounded-3xl border border-studio-accent/30 bg-studio-accent-soft p-5 transition hover:border-studio-accent/50"
-                      : "group rounded-3xl border border-studio-border bg-white/[0.02] p-5 transition hover:border-white/15 hover:bg-white/[0.04]"
-                  }
-                >
-                  <p
-                    className={
-                      card.accent
-                        ? "mb-3 text-[11px] font-medium uppercase tracking-[0.18em] text-studio-accent-hover"
-                        : "mb-3 text-[11px] font-medium uppercase tracking-[0.18em] text-studio-accent"
-                    }
-                  >
-                    {card.eyebrow}
-                  </p>
-                  <h3 className="mb-2 text-base font-semibold text-studio-text">
-                    {card.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-studio-muted">
-                    {card.body}
-                  </p>
-                </motion.article>
-              ))}
-            </div>
-          </div>
-        </motion.section>
-      )}
-    </AnimatePresence>
-  );
-}
+const CLIENT: PreviewClient = tochettoPreview;
 
 function StudioPreviewShellTochettoRefinado() {
   const [diagnosticOpen, setDiagnosticOpen] = useState(false);
@@ -202,7 +87,7 @@ function StudioPreviewShellTochettoRefinado() {
       <header className="sticky top-0 z-50 border-b border-studio-border bg-studio-bg/85 backdrop-blur-2xl">
         <div className="flex h-[74px] items-center justify-between px-4 sm:px-7 lg:px-8">
           <div className="flex min-w-0 items-center gap-5">
-            <StudioLogo />
+            <StudioLogo logoUrl={CLIENT.logoUrl} />
             <div className="hidden h-7 w-px bg-white/10 sm:block" />
             <div className="hidden min-w-0 sm:block">
               <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-studio-subtle">
@@ -269,6 +154,8 @@ function StudioPreviewShellTochettoRefinado() {
 
         <DiagnosticPanel
           open={diagnosticOpen}
+          clientName={CLIENT.name}
+          cards={CLIENT.diagnosisCards}
           onClose={() => setDiagnosticOpen(false)}
         />
       </header>
@@ -291,7 +178,7 @@ function StudioPreviewShellTochettoRefinado() {
               className="ml-auto flex h-full w-[84vw] max-w-sm flex-col border-l border-studio-border bg-studio-bg p-5 shadow-2xl"
             >
               <div className="mb-8 flex items-center justify-between">
-                <StudioLogo />
+                <StudioLogo logoUrl={CLIENT.logoUrl} />
                 <button
                   onClick={() => setMenuOpen(false)}
                   className="rounded-xl border border-studio-border p-2 text-studio-muted transition hover:bg-white/5 hover:text-studio-text"
@@ -552,102 +439,7 @@ function StudioPreviewShellTochettoRefinado() {
         </motion.div>
       </section>
 
-      <footer className="border-t border-studio-border bg-studio-surface px-4 py-12 sm:px-7 lg:px-8">
-        <div className="mx-auto flex max-w-6xl flex-col gap-10">
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            <div>
-              <div className="mb-3 flex items-center gap-2">
-                <StudioLogo />
-              </div>
-              <p className="text-xs leading-relaxed text-studio-muted">
-                Estratégia, IA e presença digital para negócios locais.
-                <br />
-                Apresentação conduzida por{" "}
-                <span className="font-semibold text-studio-text">
-                  Rafa Queiroz
-                </span>
-                .
-              </p>
-            </div>
-
-            <div>
-              <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.18em] text-studio-subtle">
-                Dados institucionais
-              </p>
-              <p className="text-xs leading-relaxed text-studio-muted">
-                Studio de IA Consultoria de Tecnologia da Informação Ltda
-              </p>
-              <p className="text-xs leading-relaxed text-studio-muted">
-                CNPJ 60.398.053/0001-34
-              </p>
-              <p className="mt-2 text-xs leading-relaxed text-studio-muted">
-                Av. Carlos Gomes, 700 — Sala 606, 5º Andar
-                <br />
-                Boa Vista, Porto Alegre — RS, 90480-000
-              </p>
-            </div>
-
-            <div>
-              <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.18em] text-studio-subtle">
-                Contato
-              </p>
-              <a
-                href={CLIENT.whatsapp}
-                target="_blank"
-                rel="noreferrer"
-                className="block text-xs leading-relaxed text-studio-muted transition hover:text-studio-text"
-              >
-                WhatsApp comercial
-              </a>
-              <a
-                href="mailto:contato@studiodeia.com.br"
-                className="block text-xs leading-relaxed text-studio-muted transition hover:text-studio-text"
-              >
-                contato@studiodeia.com.br
-              </a>
-              <a
-                href="https://studiodeia.com.br"
-                target="_blank"
-                rel="noreferrer"
-                className="block text-xs leading-relaxed text-studio-muted transition hover:text-studio-text"
-              >
-                studiodeia.com.br
-              </a>
-            </div>
-          </div>
-
-          <div className="rounded-2xl border border-studio-border bg-white/[0.02] p-4">
-            <p className="text-[11px] leading-relaxed text-studio-subtle">
-              <span className="font-semibold text-studio-muted">
-                Aviso sobre prévias comerciais.
-              </span>
-              <br />
-              As prévias apresentadas nesta plataforma são demonstrações
-              comerciais. Marcas, nomes e informações podem ser usados apenas
-              para contextualizar a proposta visual. A publicação final depende
-              de aprovação da empresa.
-            </p>
-          </div>
-
-          <div className="flex flex-col items-center justify-between gap-3 border-t border-studio-border pt-6 sm:flex-row">
-            <p className="text-[11px] text-studio-subtle">
-              © {new Date().getFullYear()} Studio de IA. Todos os direitos
-              reservados.
-            </p>
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[11px] text-studio-muted">
-              <a href="#" className="transition hover:text-studio-text">
-                Política de Privacidade
-              </a>
-              <a href="#" className="transition hover:text-studio-text">
-                Termos de Uso
-              </a>
-              <a href="#" className="transition hover:text-studio-text">
-                Aviso sobre prévias
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <PreviewFooter client={CLIENT} />
 
       <a
         href={CLIENT.whatsapp}
@@ -659,88 +451,5 @@ function StudioPreviewShellTochettoRefinado() {
         <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
       </a>
     </main>
-  );
-}
-
-function FaqSection() {
-  const items = [
-    {
-      q: "Este site já está publicado oficialmente?",
-      a: "Não. Esta é uma prévia visual criada para você avaliar a proposta. A publicação final só acontece após aprovação.",
-    },
-    {
-      q: "Posso pedir alterações?",
-      a: "Sim. Textos, imagens, WhatsApp, produtos e seções podem ser ajustados antes da publicação.",
-    },
-    {
-      q: "Preciso contratar para ver a prévia?",
-      a: "Não. Esta demonstração foi criada para você avaliar a proposta sem nenhum compromisso.",
-    },
-    {
-      q: "O site pode ir para o meu domínio?",
-      a: "Sim. Após aprovação, configuramos o domínio oficial da empresa e cuidamos da publicação.",
-    },
-    {
-      q: "Quem criou esta prévia?",
-      a: "O Studio de IA, operação especializada em presença digital, IA e automação para negócios locais, conduzida por Rafa Queiroz.",
-    },
-  ];
-  const [open, setOpen] = useState<number | null>(0);
-
-  return (
-    <section className="px-4 pt-12 sm:px-7 lg:px-8">
-      <div className="mx-auto max-w-3xl">
-        <p className="mb-2 text-[11px] font-medium uppercase tracking-[0.18em] text-studio-accent">
-          Perguntas frequentes
-        </p>
-        <h2 className="mb-8 text-2xl font-semibold tracking-tight text-studio-text sm:text-3xl">
-          Antes de qualquer decisão
-        </h2>
-        <div className="overflow-hidden rounded-3xl border border-studio-border bg-white/[0.02]">
-          {items.map((item, i) => {
-            const isOpen = open === i;
-            return (
-              <div
-                key={item.q}
-                className={
-                  i > 0 ? "border-t border-studio-border" : undefined
-                }
-              >
-                <button
-                  onClick={() => setOpen(isOpen ? null : i)}
-                  aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition hover:bg-white/[0.02]"
-                >
-                  <span className="text-sm font-semibold text-studio-text">
-                    {item.q}
-                  </span>
-                  <ChevronDown
-                    className={
-                      "h-4 w-4 shrink-0 text-studio-muted transition " +
-                      (isOpen ? "rotate-180 text-studio-accent" : "")
-                    }
-                  />
-                </button>
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-                      className="overflow-hidden"
-                    >
-                      <p className="px-5 pb-5 text-sm leading-relaxed text-studio-muted">
-                        {item.a}
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
   );
 }
