@@ -1,6 +1,7 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap");
 
 @custom-variant dark (&:is(.dark *));
 
@@ -19,6 +20,22 @@
  */
 
 @theme inline {
+  --font-sans:
+    "Satoshi", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Satoshi", ui-sans-serif, system-ui, sans-serif;
+
+  /* Studio de IA brand tokens */
+  --color-studio-bg: var(--studio-bg);
+  --color-studio-surface: var(--studio-surface);
+  --color-studio-surface-2: var(--studio-surface-2);
+  --color-studio-border: var(--studio-border);
+  --color-studio-text: var(--studio-text);
+  --color-studio-muted: var(--studio-muted);
+  --color-studio-subtle: var(--studio-subtle);
+  --color-studio-accent: var(--studio-accent);
+  --color-studio-accent-hover: var(--studio-accent-hover);
+  --color-studio-accent-soft: var(--studio-accent-soft);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -63,6 +80,19 @@
 
 :root {
   --radius: 0.625rem;
+
+  /* Studio de IA — refined dark palette */
+  --studio-bg: oklch(0.21 0.012 250);
+  --studio-surface: oklch(0.245 0.014 250);
+  --studio-surface-2: oklch(0.28 0.014 250);
+  --studio-border: oklch(1 0 0 / 8%);
+  --studio-text: oklch(0.985 0.002 250);
+  --studio-muted: oklch(0.78 0.012 250);
+  --studio-subtle: oklch(0.62 0.014 250);
+  --studio-accent: oklch(0.62 0.224 25);
+  --studio-accent-hover: oklch(0.68 0.224 25);
+  --studio-accent-soft: oklch(0.62 0.224 25 / 12%);
+
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
   --card: oklch(1 0 0);
@@ -137,8 +167,23 @@
     border-color: var(--color-border);
   }
 
+  html {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "ss02", "cv11";
+    letter-spacing: -0.005em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
   }
 }
