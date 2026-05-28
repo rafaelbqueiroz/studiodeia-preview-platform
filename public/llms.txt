@@ -1,0 +1,27 @@
+# Studio de IA — Plataforma de Prévia
+
+> Plataforma exclusiva de prévia e entrega de sites criados pelo Studio de IA.
+
+## Sobre
+
+O Studio de IA cria sites de alta conversão para empresas que precisam de posicionamento premium e pedidos qualificados. Esta plataforma exibe prévias interativas dos sites propostos aos clientes, permitindo visualização em desktop e mobile antes da publicação final.
+
+## Público
+
+Empresas B2B e B2C que buscam:
+- Posicionamento digital premium
+- Sites otimizados para conversão
+- Estrutura pronta para campanhas de marketing
+- Experiência do cliente final refinada
+
+## Tecnologia
+
+- React 19 + TanStack Start
+- Tailwind CSS v4
+- Framer Motion
+- Design system próprio com tipografia Satoshi
+
+## Contato
+
+- Site: https://studiodeia.com.br
+- WhatsApp: https://wa.me/5554993461322
