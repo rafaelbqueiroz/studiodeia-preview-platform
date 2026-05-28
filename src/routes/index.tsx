@@ -192,9 +192,9 @@ function StudioPreviewShellTochettoRefinado() {
 
   const iframeClass = useMemo(() => {
     if (mobileMode) {
-      return "h-[760px] w-[390px] max-w-full rounded-[34px] border-[10px] border-black bg-white shadow-2xl shadow-black/40";
+      return "h-[70vh] min-h-[560px] max-h-[760px] w-full max-w-[390px] rounded-[34px] border-[8px] sm:border-[10px] border-black bg-white shadow-2xl shadow-black/40";
     }
-    return "h-[calc(100vh-230px)] min-h-[640px] w-full rounded-lg bg-white";
+    return "h-[calc(100vh-230px)] min-h-[520px] w-full rounded-lg bg-white";
   }, [mobileMode]);
 
   return (
