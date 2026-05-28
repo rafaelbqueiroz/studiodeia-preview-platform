@@ -180,36 +180,36 @@ function StudioPreviewShellTochettoRefinado() {
   }, [mobileMode]);
 
   return (
-    <main className="min-h-screen bg-[#171d24] text-white selection:bg-[#ef001e] selection:text-white">
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#171d24]/85 backdrop-blur-2xl">
-        <div className="flex h-[78px] items-center justify-between px-4 sm:px-7 lg:px-8">
+    <main className="min-h-screen bg-studio-bg text-studio-text selection:bg-studio-accent selection:text-white">
+      <header className="sticky top-0 z-50 border-b border-studio-border bg-studio-bg/85 backdrop-blur-2xl">
+        <div className="flex h-[74px] items-center justify-between px-4 sm:px-7 lg:px-8">
           <div className="flex min-w-0 items-center gap-5">
             <StudioLogo />
-            <div className="hidden h-8 w-px bg-white/12 sm:block" />
+            <div className="hidden h-7 w-px bg-white/10 sm:block" />
             <div className="hidden min-w-0 sm:block">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-500">
+              <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-studio-subtle">
                 Prévia do novo site
               </p>
-              <p className="truncate text-sm font-bold text-white">
+              <p className="truncate text-sm font-semibold text-studio-text">
                 {CLIENT.name}
               </p>
             </div>
           </div>
 
-          <nav className="hidden items-center gap-3 md:flex">
+          <nav className="hidden items-center gap-2 md:flex">
             <button
               onClick={() => setDiagnosticOpen((value) => !value)}
               aria-expanded={diagnosticOpen}
-              className="inline-flex items-center gap-2 rounded-xl border border-white/10 px-4 py-3 text-sm font-semibold text-slate-200 transition hover:border-white/25 hover:bg-white/[0.04] hover:text-white"
+              className="inline-flex items-center gap-2 rounded-xl border border-studio-border px-4 py-2.5 text-sm font-medium text-studio-muted transition hover:border-white/20 hover:bg-white/[0.04] hover:text-studio-text"
             >
-              <Info className="h-4 w-4 text-[#ef001e]" />
+              <Info className="h-4 w-4 text-studio-accent" />
               {diagnosticOpen ? "Ocultar análise" : "Entender o que foi feito"}
             </button>
             <a
               href={CLIENT.whatsapp}
               target="_blank"
               rel="noreferrer"
-              className="group inline-flex items-center gap-2 rounded-xl bg-[#ef001e] px-5 py-3 text-sm font-black text-white shadow-[0_18px_42px_rgba(239,0,30,0.30)] transition hover:-translate-y-0.5 hover:bg-[#ff1734] hover:shadow-[0_22px_50px_rgba(239,0,30,0.40)]"
+              className="group inline-flex items-center gap-2 rounded-xl bg-studio-accent px-5 py-2.5 text-sm font-semibold text-white shadow-[0_14px_32px_-12px_oklch(0.62_0.224_25_/_0.55)] transition hover:-translate-y-0.5 hover:bg-studio-accent-hover"
             >
               Quero conversar
               <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -218,7 +218,7 @@ function StudioPreviewShellTochettoRefinado() {
 
           <button
             onClick={() => setMenuOpen(true)}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-white transition hover:bg-white/[0.08] md:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-studio-border bg-white/[0.03] text-studio-text transition hover:bg-white/[0.06] md:hidden"
             aria-label="Abrir menu"
           >
             <Menu className="h-5 w-5" />
@@ -231,15 +231,15 @@ function StudioPreviewShellTochettoRefinado() {
             height: scrolled ? 0 : "auto",
           }}
           transition={{ duration: 0.25, ease: "easeOut" }}
-          className="overflow-hidden border-t border-white/10 bg-[#1b222b]"
+          className="overflow-hidden border-t border-studio-border bg-studio-surface/60"
         >
           <div className="flex flex-col gap-3 px-4 py-3 sm:px-7 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-            <p className="max-w-4xl text-sm leading-relaxed text-slate-300">
+            <p className="max-w-4xl text-sm leading-relaxed text-studio-muted">
               Criamos uma proposta de site para{" "}
-              <span className="font-semibold text-white">{CLIENT.name}</span>{" "}
+              <span className="font-semibold text-studio-text">{CLIENT.name}</span>{" "}
               com foco em {CLIENT.objective}.
             </p>
-            <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+            <p className="flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-studio-subtle">
               <span className="relative inline-flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400/60 opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-400" />
