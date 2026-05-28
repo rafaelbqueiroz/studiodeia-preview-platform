@@ -157,7 +157,21 @@ function DiagnosticPanel({
 
 function StudioPreviewShellTochettoRefinado() {
   const [diagnosticOpen, setDiagnosticOpen] = useState(false);
-  const [mobileMode, setMobileMode] = useState(false);
+  const [mobileMode, setMobileMode] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return window.matchMedia("(max-width: 768px)").matches;
+  });
+  const [userToggled, setUserToggled] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mql = window.matchMedia("(max-width: 768px)");
+    const onChange = (e: MediaQueryListEvent) => {
+      if (!userToggled) setMobileMode(e.matches);
+    };
+    mql.addEventListener("change", onChange);
+    return () => mql.removeEventListener("change", onChange);
+  }, [userToggled]);
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [iframeLoaded, setIframeLoaded] = useState(false);
