@@ -91,22 +91,22 @@ function DiagnosticPanel({
           animate={{ height: "auto", opacity: 1 }}
           exit={{ height: 0, opacity: 0 }}
           transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="overflow-hidden border-t border-white/10 bg-gradient-to-b from-[#111820] to-[#0f151c]"
+          className="overflow-hidden border-t border-studio-border bg-studio-surface"
         >
-          <div className="px-4 py-6 sm:px-6 lg:px-8">
-            <div className="mb-5 flex items-start justify-between gap-4">
+          <div className="px-4 py-7 sm:px-6 lg:px-8">
+            <div className="mb-6 flex items-start justify-between gap-4">
               <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#ef001e]">
+                <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-studio-accent">
                   Análise estratégica
                 </p>
-                <h2 className="mt-1.5 text-xl font-black tracking-tight text-white sm:text-2xl">
+                <h2 className="mt-2 text-xl font-semibold tracking-tight text-studio-text sm:text-2xl">
                   O que pensamos para a {CLIENT.name}
                 </h2>
               </div>
               {onClose && (
                 <button
                   onClick={onClose}
-                  className="rounded-xl border border-white/10 p-2 text-slate-300 transition hover:bg-white/5 hover:text-white md:hidden"
+                  className="rounded-xl border border-studio-border p-2 text-studio-muted transition hover:bg-white/5 hover:text-studio-text md:hidden"
                   aria-label="Fechar diagnóstico"
                 >
                   <X className="h-5 w-5" />
@@ -122,23 +122,23 @@ function DiagnosticPanel({
                   transition={{ duration: 0.35, delay: 0.05 + i * 0.05 }}
                   className={
                     card.accent
-                      ? "group rounded-3xl border border-[#ef001e]/30 bg-gradient-to-br from-[#ef001e]/15 to-[#ef001e]/5 p-5 shadow-[0_18px_55px_rgba(239,0,30,0.10)] transition hover:border-[#ef001e]/50"
-                      : "group rounded-3xl border border-white/10 bg-white/[0.035] p-5 transition hover:border-white/20 hover:bg-white/[0.05]"
+                      ? "group rounded-3xl border border-studio-accent/30 bg-studio-accent-soft p-5 transition hover:border-studio-accent/50"
+                      : "group rounded-3xl border border-studio-border bg-white/[0.02] p-5 transition hover:border-white/15 hover:bg-white/[0.04]"
                   }
                 >
                   <p
                     className={
                       card.accent
-                        ? "mb-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#ff7a8a]"
-                        : "mb-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#ef001e]"
+                        ? "mb-3 text-[11px] font-medium uppercase tracking-[0.18em] text-studio-accent-hover"
+                        : "mb-3 text-[11px] font-medium uppercase tracking-[0.18em] text-studio-accent"
                     }
                   >
                     {card.eyebrow}
                   </p>
-                  <h3 className="mb-2 text-base font-bold text-white">
+                  <h3 className="mb-2 text-base font-semibold text-studio-text">
                     {card.title}
                   </h3>
-                  <p className="text-sm leading-relaxed text-slate-300">
+                  <p className="text-sm leading-relaxed text-studio-muted">
                     {card.body}
                   </p>
                 </motion.article>
