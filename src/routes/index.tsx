@@ -365,7 +365,7 @@ function StudioPreviewShellTochettoRefinado() {
               <button
                 role="tab"
                 aria-selected={!mobileMode}
-                onClick={() => setMobileMode(false)}
+                onClick={() => { setUserToggled(true); setMobileMode(false); }}
                 className={
                   !mobileMode
                     ? "inline-flex items-center gap-2 rounded-lg bg-studio-text px-3 py-2 text-sm font-semibold text-studio-bg shadow-sm"
