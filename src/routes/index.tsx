@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { getAllSlugs } from "../data/previews";
 import { ArrowUpRight } from "lucide-react";
+import { StudioLogo } from "../components/preview/StudioLogo";
 
 export const Route = createFileRoute("/")({
   head: () => ({
