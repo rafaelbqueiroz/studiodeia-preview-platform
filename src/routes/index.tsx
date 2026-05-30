@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { getAllSlugs } from "../data/previews";
 import { ArrowUpRight } from "lucide-react";
+import { StudioLogo } from "../components/preview/StudioLogo";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -22,9 +23,9 @@ function PlatformLanding() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-studio-bg px-4 text-center">
       <div className="mx-auto max-w-lg">
-        <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-studio-accent">
-          Studio de IA
-        </p>
+        <div className="flex justify-center">
+          <StudioLogo logoUrl="https://studiodeia.com.br/images/logo.svg" />
+        </div>
         <h1 className="mt-4 text-3xl font-semibold tracking-tight text-studio-text">
           Prévia Estratégica
         </h1>
